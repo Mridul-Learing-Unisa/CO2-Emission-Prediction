@@ -33,6 +33,7 @@ def gradient_descent(x, y, w_in, b_in, alpha, num_iters, compute_gradient):
         cost_i = compute_cost(x, y, w, b)
         if i<10000: # just to prevent resource exaustion
             j_histpry.append(cost_i)
-            p_history.append([w,b])         
+            p_history.append([w,b])   
+              
 
     return w, b, j_histpry, p_history
