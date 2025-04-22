@@ -27,14 +27,23 @@ b_init = 0
 iterations = 10000
 tmp_alpha = 1e-4
 
+print('Please Wait running Data Set')
 # === Train using Gradient Descent ===
 w_final, b_final, J_hist, p_hist = gradient_descent(x_norm, y_train, w_init, b_init, tmp_alpha, iterations, compute_gradient)
 
-# === Recalculate cost using final model ===
-cost = compute_cost(x_norm, y_train, w_final, b_final)
+print()
+print("Welcome to the CO₂ Emission Predictor CLI")
+print("Enter fuel consumption in L/100km (type 'q' to quit)\n")
 
-# === Make prediction for a new value (remember to normalize it!) ===
-test_value = 8.5
-test_value_norm = (test_value - mean_x) / std_x
-prediction = predict(test_value_norm, w_final, b_final)
-print(f"Aprox Predicted CO2 Emission for {test_value} L/100km: {prediction} g/km")
+while True:
+    user_input = input("Enter fuel consumption (L/100km): ")
+    if user_input.lower() == 'q':
+        print("Exiting the predictor. See you!")
+        break
+    try:
+        fuel = float(user_input)
+        fuel = (fuel - mean_x) / std_x
+        result = predict(fuel, w_final, b_final)
+        print(f"Predicted CO2 Emission: {round(result, 1)} g/km\n")
+    except ValueError:
+        print("Please enter a valid number (e.g., 10.5), or 'q' to quit.\n")
