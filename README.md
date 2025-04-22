@@ -1,6 +1,6 @@
 # 🚗 CO₂ Emission Predictor
 
-A beginner-friendly Machine Learning linear regression Moedl that predicts CO₂ emissions (in g/km) based on a vehicle's fuel consumption (L/100km) using **univariate linear regression**. Built from scratch using Python and **gradient descent**,
+A beginner-friendly Machine Learning linear regression model that predicts CO₂ emissions (in g/km) based on a vehicle's fuel consumption (L/100km) using **univariate linear regression**. Built from scratch using Python and **gradient descent**,
 
 
 ## 📈 Graphs
