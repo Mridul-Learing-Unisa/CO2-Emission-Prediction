@@ -17,4 +17,3 @@ w, b = get_w_b(filename)
 
 cost = compute_cost(x_train, y_train, w, b)
 print(f"Squared Error Cost Function: {cost}")
-
